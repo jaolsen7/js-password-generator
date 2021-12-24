@@ -11,7 +11,7 @@ function generatePassword() {
   var length = prompt("How many characters does your password need?");
     if (length < 8 || length > 128 || isNaN(length)) {
       alert("We're sorry. Your password must be between 8-128 characters.");
-      length = prompt("How many characters does your password need?");
+      return generatePassword();
   } 
   var lowerCase = confirm("Would you like lowercase letters?");
     if (lowerCase === true) {
@@ -29,25 +29,14 @@ function generatePassword() {
     if (specials === true) {
         randomChar += specialChar;
     }
+  if (lowerCase !== true && upperCase !== true && numbers !== true && specials !== true) {
+      alert("Security compromised. Please reconsider your actions");
+      return;
+  }
     var password = "";
     for (var i = 0; i < length; i++) {
         password += randomChar[Math.floor(Math.random() * randomChar.length)];
     }
-
-// 1. prompt user for password criteria
-//      -let characters be a string of random letters (A-Z)
-//      -let password be an empty string
-//      -for loop: condition passsword.length < 4
-//      -let randomChar be a string selected from characters
-//      -add rancomChar to end of password
-//      -end for loop:
-//      -return (password);
-//
-//    a. password length 8 <= x <= 128
-//    b. lower, upper, number, special
-// 2. validate input
-// 3. generate password based on critera
-// 4. return password
 
 return (password);
   }
@@ -63,3 +52,19 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// Pseudocode:
+// 1. prompt user for password criteria
+//      -let characters be a string of random letters (A-Z)
+//      -let password be an empty string
+//      -for loop: condition passsword.length < 4
+//      -let randomChar be a string selected from characters
+//      -add rancomChar to end of password
+//      -end for loop:
+//      -return (password);
+//
+//    a. password length 8 <= x <= 128
+//    b. lower, upper, number, special
+// 2. validate input
+// 3. generate password based on critera
+// 4. return password
