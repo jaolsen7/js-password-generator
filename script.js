@@ -9,22 +9,26 @@ function generatePassword() {
   var randomChar = "";
 
   var length = prompt("How many characters does your password need?");
-  if (length < 8 || length > 128 || isNaN(length)) {
-    alert("We're sorry. Your password must be between 8-128 characters.");
-    length = prompt("How many characters does your password need?");
+    if (length < 8 || length > 128 || isNaN(length)) {
+      alert("We're sorry. Your password must be between 8-128 characters.");
+      length = prompt("How many characters does your password need?");
   } 
   var lowerCase = confirm("Would you like lowercase letters?");
     if (lowerCase === true) {
-        randomChar += lowerChar;
+      randomChar += lowerChar;
     }
-  var upperCase = confirm("Would you like uppercase letters?");
-    if (upperCase === true) {
-        randomChar += upperChar;
-    }
-  var numbers = confirm("Would you like numbers?");
-    if (numbers === true) {
-        randomChar += numberChar;
-    }
+  //var upperCase = confirm("Would you like uppercase letters?");
+ //   if (upperCase === true) {
+ //       randomChar += upperChar;
+ //   }
+ // var numbers = confirm("Would you like numbers?");
+ //   if (numbers === true) {
+ //       randomChar += numberChar;
+ //   }
+ // var specials = confirm("Would you like special characters?");
+ //   if (specials === true) {
+//        randomChar += specialChar;
+//    }
     var password = "";
     for (var i = 0; i < length; i++) {
         password += randomChar[Math.floor(Math.random() * randomChar.length)];
