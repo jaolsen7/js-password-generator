@@ -17,18 +17,18 @@ function generatePassword() {
     if (lowerCase === true) {
       randomChar += lowerChar;
     }
-  //var upperCase = confirm("Would you like uppercase letters?");
- //   if (upperCase === true) {
- //       randomChar += upperChar;
- //   }
- // var numbers = confirm("Would you like numbers?");
- //   if (numbers === true) {
- //       randomChar += numberChar;
- //   }
- // var specials = confirm("Would you like special characters?");
- //   if (specials === true) {
-//        randomChar += specialChar;
-//    }
+  var upperCase = confirm("Would you like uppercase letters?");
+    if (upperCase === true) {
+        randomChar += upperChar;
+    }
+  var numbers = confirm("Would you like numbers?");
+    if (numbers === true) {
+        randomChar += numberChar;
+    }
+  var specials = confirm("Would you like special characters?");
+    if (specials === true) {
+        randomChar += specialChar;
+    }
     var password = "";
     for (var i = 0; i < length; i++) {
         password += randomChar[Math.floor(Math.random() * randomChar.length)];
